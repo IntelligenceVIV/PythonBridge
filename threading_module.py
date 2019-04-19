@@ -13,16 +13,16 @@ import time
 # 'currentThread', 'current_thread', 'enumerate', 'get_ident', 'local',
 # 'main_thread', 'setprofile', 'settrace', 'stack_size'
 
-# def function(arg):
-#     time.sleep(1)
-#     print("The function {arg} is running.".format_map({'arg': arg}))
-#
-#
-# if __name__ == "__main__":
-#
-#     for i in range(5):
-#         t = threading.Thread(target=function, args=(i,))
-#         t.start()
+def function(arg):
+    time.sleep(1)
+    print("The function {arg} is running.".format_map({'arg': arg}))
+
+
+if __name__ == "__main__":
+
+    for i in range(5):
+        t = threading.Thread(target=function, args=(i,))
+        t.start()
 
 ###########################################################################
 # Lock and RLock

@@ -110,9 +110,9 @@ conn.close()
 #####################################################################################
 # Redis
 
-import redis
+from redis import StrictRedis
 
-r = redis.Redis(host='localhost', port=6379, db=0)
+r = StrictRedis(host='localhost', port=6379, db=0, password=None)
 r.set('foo', 'bar')
 print(r.get('foo'))
 

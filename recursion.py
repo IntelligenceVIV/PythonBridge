@@ -29,4 +29,18 @@ print("result: {0}".format(get_depth))  # result: 1000
 # Set the recursion depth
 set_depth = sys.setrecursionlimit(1200)
 
+
+#################################################################
+def hanoi(n, x, y, z):
+    if n == 1:
+        print(x, '-->', z)
+    else:
+        hanoi(n - 1, x, z, y)
+        print(x, '-->', z)
+        hanoi(n - 1, y, x, z)
+
+
+n = int(input("please input the number of hanoi: "))
+hanoi(n, 'X', 'Y', 'Z')
+
 #################################################################
