@@ -10,23 +10,23 @@ def merge_sort(collection):
     comparable items inside
     :return: the same collection ordered by ascending
     Examples:
-    >>> merge_sort([0, 5, 3, 2, 2])
-    [0, 2, 2, 3, 5]
-    >>> merge_sort([])
-    []
-    >>> merge_sort([-2, -5, -45])
-    [-45, -5, -2]
+    # >>> merge_sort([0, 5, 3, 2, 2])
+    # [0, 2, 2, 3, 5]
+    # >>> merge_sort([])
+    # []
+    # >>> merge_sort([-2, -5, -45])
+    # [-45, -5, -2]
     """
     length = len(collection)
     if length > 1:
         midpoint = length // 2
         left_half = merge_sort(collection[:midpoint])
         right_half = merge_sort(collection[midpoint:])
-        i = 0
-        j = 0
-        k = 0
+
+        i, j, k = 0, 0, 0
         left_length = len(left_half)
         right_length = len(right_half)
+
         while i < left_length and j < right_length:
             if left_half[i] < right_half[j]:
                 collection[k] = left_half[i]
@@ -47,3 +47,7 @@ def merge_sort(collection):
             k += 1
 
     return collection
+
+
+if __name__ == "__main__":
+    print(merge_sort([12, 9, 20, 18, 3, 1, 13, 20]))

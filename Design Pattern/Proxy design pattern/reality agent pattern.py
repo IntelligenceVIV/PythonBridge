@@ -40,9 +40,11 @@ class Bank(Payment):
 
 class DebitCard(Payment):
     def __init__(self):
+        # 银行类 => 对象实例化
         self.bank = Bank()
 
     def do_pay(self):
+        # 处理用户请求
         card = input("Proxy:: Punch in Card Number: ")
         self.bank.setCard(card)
         return self.bank.do_pay()
@@ -51,12 +53,16 @@ class DebitCard(Payment):
 class You:
     def __init__(self):
         print("You:: Lets buy the Denim shirt")
+        # 借记卡类 => 对象实例化
         self.debitCard = DebitCard()
         self.isPurchased = None
 
+    # 内部逻辑调用
     def make_payment(self):
+        # 调用对象 do_pay 方法 => 处理用户支付的请求
         self.isPurchased = self.debitCard.do_pay()
 
+    # 最后执行删除操作
     def __del__(self):
         if self.isPurchased:
             print("You:: Wow! Denim shirt is Mine :-)")
@@ -64,5 +70,6 @@ class You:
             print("You:: I should earn more :(")
 
 
-you = You()
-you.make_payment()
+if __name__ == "__main__":
+    you = You()
+    you.make_payment()

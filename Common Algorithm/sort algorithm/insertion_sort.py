@@ -4,6 +4,8 @@
 # @Software: PyCharm
 # @description: python -m doctest -v insertion_sort.py
 
+# 在列表前构造一个排序列表，后面的元素插入到排序列表中
+
 def insertion_sort(collection):
     """Pure implementation of the insertion sort algorithm in Python
     :param collection: some mutable ordered collection with heterogeneous

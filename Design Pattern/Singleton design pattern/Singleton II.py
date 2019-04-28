@@ -7,7 +7,7 @@
 class HealthCheck:
     _instance = None
 
-    def __call__(cls, *args, **kwargs):
+    def __new__(cls, *args, **kwargs):
         if not HealthCheck._instance:
             HealthCheck._instance = super(HealthCheck, cls).__new__(cls, *args, **kwargs)
         return HealthCheck._instance

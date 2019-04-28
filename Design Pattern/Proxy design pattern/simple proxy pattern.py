@@ -21,18 +21,23 @@ class Actor(object):
         return self.isBusy
 
 
+# 代理
 class Agent(object):
     def __init__(self):
+        # 主要 principal
         self.principal = None
 
     def work(self):
+        # 发起方 => 提供方
         self.actor = Actor()
+        # self.isBusy
         if self.actor.getStatus():
+            # change isBusy state
             self.actor.occupied()
         else:
             self.actor.available()
 
 
 if __name__ == "__main__":
-    r = Agent()
-    r.work()
+    obj = Agent()
+    obj.work()

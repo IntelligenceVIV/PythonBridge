@@ -2,15 +2,27 @@
 # @Author  : Noah
 # @File    : bucket_sort.py
 # @Software: PyCharm
-# @description: 
+# @description: 桶排序
 
-from .insertion_sort import insertion_sort
 import math
 
+
+# 调用插入排序
+def insertion_sort(collection):
+    for index in range(1, len(collection)):
+        while index > 0 and collection[index - 1] > collection[index]:
+            collection[index], collection[index - 1] = collection[index - 1], collection[index]
+            index -= 1
+
+    return collection
+
+
+# 默认桶的数量
 DEFAULT_BUCKET_SIZE = 5
 
+
 def bucketSort(myList, bucketSize=DEFAULT_BUCKET_SIZE):
-    if(len(myList) == 0):
+    if (len(myList) == 0):
         print('You don\'t have any elements in array!')
 
     minValue = myList[0]
@@ -42,6 +54,15 @@ def bucketSort(myList, bucketSize=DEFAULT_BUCKET_SIZE):
 
     return sortedArray
 
+
 if __name__ == '__main__':
     sortedArray = bucketSort([12, 23, 4, 5, 3, 2, 12, 81, 56, 95])
     print(sortedArray)
+
+# 总结：
+
+# 工作的原理是将数组分到有限数量的桶里
+
+# 每个桶再个别排序（再使用别的排序算法或以递归方式继续进行排序）
+
+# 最后依次把各个桶中的元素取出来得到最后有序序列

@@ -10,14 +10,14 @@ def bubble_sort(collection):
    comparable items inside
    :return: the same collection ordered by ascending
    Examples:
-   >>> bubble_sort([0, 5, 3, 2, 2])
-   [0, 2, 2, 3, 5]
-   >>> bubble_sort([])
-   []
-   >>> bubble_sort([-2, -5, -45])
-   [-45, -5, -2]
-
-   >>> bubble_sort([-23,0,6,-4,34])
+   # >>> bubble_sort([0, 5, 3, 2, 2])
+   # [0, 2, 2, 3, 5]
+   # >>> bubble_sort([])
+   # []
+   # >>> bubble_sort([-2, -5, -45])
+   # [-45, -5, -2]
+   #
+   # >>> bubble_sort([-23,0,6,-4,34])
    [-23, -4, 0, 6, 34]
    """
     length = len(collection)
@@ -29,3 +29,7 @@ def bubble_sort(collection):
                 collection[j], collection[j + 1] = collection[j + 1], collection[j]
         if not swapped: break  # Stop iteration if the collection is sorted.
     return collection
+
+
+if __name__ == "__main__":
+    print(bubble_sort([12, 10, 5, 21, 24, 19]))

@@ -5,3 +5,12 @@
 # @description: data base type knowledge
 
 # number: int complex float bool
+
+import json
+
+string = 'Race civil goal return begin result. Bill win forget end third bit behavior.' \
+         'Letter plant act choose say perhaps kind. Since technology finish knowledge.' \
+         'Rich heart today.'
+
+str = string.encode()
+print(str)

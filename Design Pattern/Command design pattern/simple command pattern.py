@@ -5,9 +5,9 @@
 # @description: 对象封装调用一个事件所需的全部信息
 
 class Wizard():
-    def __init__(self, src, rootdir):
+    def __init__(self, src, dir):
         self.choices = []
-        self.rootdir = rootdir
+        self.dir = dir
         self.src = src
 
     def preferences(self, command):
@@ -16,7 +16,7 @@ class Wizard():
     def execute(self):
         for choice in self.choices:
             if list(choice.values())[0]:
-                print("Copying binaries --", self.src, " to ", self.rootdir)
+                print("Copying binaries --", self.src, " to ", self.dir)
 
             else:
                 print("No Operation")

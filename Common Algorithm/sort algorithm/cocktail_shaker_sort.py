@@ -2,7 +2,10 @@
 # @Author  : Noah
 # @File    : cocktail_shaker_sort.py
 # @Software: PyCharm
-# @description: 
+# @description: 鸡尾酒排序
+
+# 是冒泡排序的一种变形又称双向冒泡排序
+# 该算法与冒泡排序的不同处在于排序时是以双向在序列中进行排序
 
 def cocktail_shaker_sort(unsorted):
     """
@@ -23,3 +26,7 @@ def cocktail_shaker_sort(unsorted):
 
         if not swapped:
             return unsorted
+
+
+if __name__ == '__main__':
+    print(cocktail_shaker_sort([10, 9, 14, 19, 15, 9, 21]))

@@ -2,7 +2,7 @@
 # @Author  : Noah
 # @File    : simple observer pattern.py
 # @Software: PyCharm
-# @description: 一个对象中的任何更改都将自动通知给其它依赖对象并且封装主题的核心组件
+# @description: 一个对象中的任何更改都将自动通知给其它依赖对象 并且封装主题的核心组件
 
 class Subject:
     def __init__(self):
@@ -13,6 +13,7 @@ class Subject:
 
     def notifyAll(self, *args, **kwargs):
         for observer in self.__observers:
+            # 调用观察对象 notify 方法
             observer.notify(self, *args, **kwargs)
 
 
@@ -32,7 +33,9 @@ class Observer2:
         print(type(self).__name__, ':: Got', args, 'From', subject)
 
 
-subject = Subject()
-observer1 = Observer1(subject)
-observer2 = Observer2(subject)
-subject.notifyAll('notification')
+if __name__ == "__main__":
+    subject = Subject()
+
+    observer1 = Observer1(subject)
+    observer2 = Observer2(subject)
+    subject.notifyAll('notification')
