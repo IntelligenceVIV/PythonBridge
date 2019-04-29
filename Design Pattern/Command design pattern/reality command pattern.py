@@ -7,12 +7,14 @@
 from abc import ABCMeta, abstractmethod
 
 
+# 提供抽象类Order和抽象方法execute
 class Order(metaclass=ABCMeta):
     @abstractmethod
     def execute(self):
         pass
 
 
+# 实现接口的具体类
 class BuyStockOrder(Order):
     def __init__(self, stock):
         self.stock = stock
@@ -29,6 +31,7 @@ class SellStockOrder(Order):
         self.stock.sell()
 
 
+# 表示该示例中的Receiver对象
 class StockTrade:
     def buy(self):
         print("You will buy stocks")
@@ -37,6 +40,7 @@ class StockTrade:
         print("You will sell stocks")
 
 
+# 表示调用者角色
 class Agent:
     def __init__(self):
         self.__orderQueue = []
@@ -46,6 +50,7 @@ class Agent:
         order.execute()
 
 
+# 客户端的实现代码
 if __name__ == '__main__':
     stock = StockTrade()
     buyStock = BuyStockOrder(stock)

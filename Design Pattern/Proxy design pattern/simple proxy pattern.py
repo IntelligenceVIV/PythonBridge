@@ -2,9 +2,13 @@
 # @Author  : Noah
 # @File    : simple proxy pattern.py
 # @Software: PyCharm
-# @description: 控制对象访问
+# @description: 代理模式 --- 控制对象访问
+
+# 结构型设计模式
 
 # 代理通常就是一个介于寻求方和提供方之间的中介系统
+
+# 演员对象类
 class Actor(object):
     def __init__(self):
         self.isBusy = False
@@ -41,3 +45,11 @@ class Agent(object):
 if __name__ == "__main__":
     obj = Agent()
     obj.work()
+
+# 代理模式主要完成以下功能：
+
+# 1.它为其他对象提供了一个代理从而实现了对原始对象的访问控制
+
+# 2.它可以用作一个层或接口以支持分布式访问
+
+# 3.它通过增加代理保护真正的组件不受意外的影响

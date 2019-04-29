@@ -4,6 +4,8 @@
 # @Software: PyCharm
 # @description: 允许接口创建对象但不会暴露对象的创建逻辑
 
+# 创建型设计模式
+
 from abc import ABCMeta, abstractmethod
 
 

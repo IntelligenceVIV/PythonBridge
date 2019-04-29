@@ -2,8 +2,21 @@
 # @Author  : Noah
 # @File    : Implement the door pattern.py
 # @Software: PyCharm
-# @description: 解决如何用单个接口对象来表示复杂的子系统
+# @description: 门面模式 --- 与门面相适
 
+# 结构设计模式
+# 它为子系统中的一组接口提供一个统一的接口
+# 解决如何用单个接口对象来表示复杂的子系统
+# 它促进了实现与多个客户端的解耦
+
+# 门面facade通常指事物的表面
+
+# 门面隐藏内部系统复杂性的同时为客户提供一个接口以便它们可以非常轻松地访问系统
+
+
+########################################################################
+
+# 根据应用场景提供多个子系统
 class Hotelier(object):
     def __init__(self):
         print("Arranging the Hotel for Marriage? --")
@@ -41,6 +54,9 @@ class Musician(object):
         print("Jazz and Classical will be played\n\n")
 
 
+########################################################################
+
+# 门面 facade 角色
 class EventManager(object):
     def __init__(self):
         print("Event Manger:: Let me talk to the folks\n")
@@ -59,6 +75,9 @@ class EventManager(object):
         self.musician.setMusicType()
 
 
+########################################################################
+
+# 管理员角色
 class YouManger(object):
     def __init__(self):
         print("You:: Whoa! Marriage Arrangements??!!")
@@ -72,5 +91,8 @@ class YouManger(object):
         print("You:: Thanks to Event Manager, all preparations done! Phew!")
 
 
-you = YouManger()
-you.askEventManager()
+if __name__ == "__main__":
+    you = YouManger()
+    you.askEventManager()
+
+########################################################################

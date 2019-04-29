@@ -145,6 +145,7 @@ class Fibonacci(object):
 
 obj = Fibonacci()
 
+
 # for _ in range(10):
 #     print(obj.next())
 
@@ -158,4 +159,41 @@ obj = Fibonacci()
 
 # __getitem__ 按照下标取出元素(有序)
 
+#############################################################################
+
+# 静态方法： 不需要定义实例即可使用这个方法, 为类方法和对象方法提供一种模块化的封装函数
+
+# 类方法：通过类或它的实例来调用的方法，第一个参数总是定义该方法的类对象 cls
+
+# 实例方法：将类的当前实例化对象 self 作为第一个参数传入, 只支持对象的调用
+
+#############################################################################
+
+# super()函数 --- 用于调用父类的一个方法
+# super(type(class), self)
+
+class FooParent(object):
+    def __init__(self):
+        self.parent = 'I\'m the parent.'
+        print('Parent')
+
+    def bar(self, message):
+        print("%s from Parent" % message)
+
+
+class FooChild(FooParent):
+    def __init__(self):
+        # super(FooChild,self) 首先找到 FooChild 的父类（就是类 FooParent），然后把类B的对象 FooChild 转换为类 FooParent 的对象
+        super(FooChild, self).__init__()
+        print('Child')
+
+    def bar(self, message):
+        super(FooChild, self).bar(message)
+        print('Child bar function')
+        print(self.parent)
+
+
+if __name__ == '__main__':
+    fooChild = FooChild()
+    fooChild.bar('HelloWorld')
 #############################################################################
