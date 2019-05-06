@@ -1,6 +1,6 @@
 # @Time    : 2019/4/28 14:48
 # @Author  : Noah
-# @File    : async module.py
+# @File    : asyncDemo.py
 # @Software: PyCharm
 # @description: async和await是针对协程coroutine的新语法
 import asyncio
