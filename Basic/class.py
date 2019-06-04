@@ -33,7 +33,7 @@ class A(object):
 
     # __call__()直接在实例本身上调用
     def __call__(self):
-        return "The Number is: ".format(self.value)
+        return self.value
 
 
 class B(object):
