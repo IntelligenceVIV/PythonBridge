@@ -5,8 +5,8 @@ import random
 import json
 
 # 百度翻译账号
-appid = '20190601000304085'
-secretKey = 'McZ2YUzH0tWf9wq1c9Gw'
+appid = ''
+secretKey = ''
 
  
 httpClient = None
